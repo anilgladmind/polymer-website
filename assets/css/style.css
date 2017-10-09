@@ -1,0 +1,174 @@
+/* Custom Styles  */
+
+/* Menu */
+.sub-menu-parent{position: relative;}
+
+.sub-menu{
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	transform: translateY(-2em);
+	z-index: -1;
+	transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+	
+	list-style-type: none;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+	border-radius: 4px;
+	border-radius: 4px;
+    box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.3);
+}
+.sub-menu:before{
+	content: '';
+	position: absolute;
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    clear: both;
+    left: 43%;
+    top: -10px;
+}
+.sub-menu > li:first-child, .sub-menu > li:first-child > a{
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.sub-menu > li:last-child, .sub-menu > li:last-child > a{
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.sub-menu > li > a{
+	display: block;
+	padding: 6px 12px;
+	color: #777;
+}
+.sub-menu > li > a:hover{
+	background:#ddd;
+}
+.sub-menu-parent:hover .sub-menu {
+  visibility: visible; /* shows sub-menu */
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+}
+
+/* Fixed Menu */
+.fixed-menu-link{
+	border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: #f52757;
+    z-index: 9999999;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.5);
+	text-align: center;
+    font-size: 23px;
+    padding: 10px 8px;
+    color: #fff;
+	
+	-webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+.fixed-menu-link span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 50%;
+  background: #ffffff;
+  border-radius: 9px;
+  opacity: 1;
+  left: 25%;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+.fixed-menu-link span:nth-child(1) {
+  top: 15px;
+}
+
+.fixed-menu-link span:nth-child(2) {
+  top: 25px;
+}
+
+.fixed-menu-link span:nth-child(3) {
+  top: 35px;
+}
+
+.fixed-menu-link.open span:nth-child(1) {
+  top: 25px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.fixed-menu-link.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.fixed-menu-link.open span:nth-child(3) {
+  top: 25px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+
+
+
+
+.fixed-menu-link:hover, .fixed-menu-link:focus{
+	color:#fff;
+}
+.fixed-menu{
+	height: calc(100vh - 85px);
+    width: 250px;
+    background: #fff;
+    position: fixed;
+    z-index: 4;
+    right: 15px;
+    bottom: 70px;
+	top: 15px;
+    overflow-y: auto;
+	display: none;
+	border-radius: 4px;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3);
+    padding: 10px;
+}
+
+
+
+
+/* Content */
+.main-content{
+	width: 950px;
+    margin: 0 auto;
+}
+.main-content p{
+	text-align: justify;
+}
